@@ -24,9 +24,9 @@ Output: [0,1]
 
 Constraints:
 
-2 <= nums.length <= 104
--109 <= nums[i] <= 109
--109 <= target <= 109
+2 <= nums.length <= 10^4
+-10^9 <= nums[i] <= 10^9
+-10^9 <= target <= 10^9
 Only one valid answer exists.
  
 
@@ -35,16 +35,14 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 
 def two_sum(input_list, target):
-    output = []
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
     num_indices = {}
     for i, num in enumerate(input_list):
         complement = target - num
         if complement in num_indices:
-            output = [num_indices[complement], i]
-            break
+            return [num_indices[complement], i]
         num_indices[num] = i
-    print(output)
-    return output
 
 
 input_list1 = [2, 7, 11, 15]
